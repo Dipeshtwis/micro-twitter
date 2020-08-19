@@ -6,11 +6,7 @@
       <%= form_for @tweeet, :html => {:multipart => true} do |f| %>
       <div class="form-row align-items-center">
         <div class="input-group mb-2 d-flex align-items-center">
-          <img
-            class="rounded-circle mr-2"
-            src="https://bulma.io/images/placeholders/64x64.png"
-            alt=""
-          />
+        <%= gravatar_image_tag(current_model.email, size: 64, :alt => current_model.name, :class => "rounded-circle mr-2")  %>
           <%= f.text_field :tweeet, class: "form-control tweet-input", placeholder: "What's Happening?" %>
         </div>
       </div>
