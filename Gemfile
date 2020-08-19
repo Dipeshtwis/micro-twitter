@@ -31,6 +31,7 @@ gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'devise', '~> 4.7', '>= 4.7.2'
+gem 'toastr-rails'
 
 
 group :development, :test do

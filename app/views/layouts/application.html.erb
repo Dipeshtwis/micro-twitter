@@ -6,23 +6,23 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <% if flash[:notice] %> 
-      <div class="notification is-primary global-notifications">
-        <p class="notice">notice</p> 
-      </div> 
-    <% end %>
-    <% if flash[:alert] %>
-    <div class="notification is-danger global-notifications">
-      <p class="alert">alert</p> 
-    </div>
-    <% end %>
 
     <%= yield %>
+
+    <% if flash.any? %>
+    <script type="text/javascript">
+
+      <% flash.each do |key, value| %>
+        <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
+        toastr.<%= type %>('<%= value %>')
+      <% end %>
+
+    </script>
+    <% end %>
   </body>
 </html>
