@@ -1,3 +1,4 @@
+<% @tweeets.each do |tweeet| %>
 <div class="row">
   <div class="col-sm-2">
     <img
@@ -12,8 +13,7 @@
       <span class="text-gray">@97deepeshkumar . 3m</span>
     </p>
     <p class="tweet-content">
-      Sometimes, what we just need is a push. Someone to tell us "Go ahead, you
-      can do it"
+      <%= tweeet.tweeet %> </br>
     </p>
 
     <div class="tweet-content-icons d-flex justify-content-between">
@@ -76,3 +76,4 @@
   </div>
 </div>
 <div class="spacer border-top mt-4 mb-4"></div>
+<% end %>
