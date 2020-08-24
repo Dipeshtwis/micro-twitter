@@ -1,6 +1,5 @@
 <% @tweeets.each do |tweeet| %>
 <div class="row">
-
   <div class="col-sm-2">
     <%= gravatar_image_tag(tweeet.model.email, size: 64, alt: tweeet.model.name, class: "rounded-circle")  %>
   </div>
@@ -22,7 +21,7 @@
             ></path>
           </g>
         </svg>
-        25
+        <%= rand(1..50) %>
       </a>
 
       <a href="#" class="tweet-content-icons__links">
@@ -33,7 +32,7 @@
             ></path>
           </g>
         </svg>
-        304
+        <%= rand(1..990) %>
       </a>
 
       <a href="#" class="tweet-content-icons__links">
@@ -44,7 +43,7 @@
             ></path>
           </g>
         </svg>
-        2.5k
+        <%= rand(1..999) %>
       </a>
 
       <% if tweeet.model == current_model %>
@@ -68,7 +67,6 @@
           </g>
         </svg>
       </a>
-
     </div>
   </div>
 </div>
